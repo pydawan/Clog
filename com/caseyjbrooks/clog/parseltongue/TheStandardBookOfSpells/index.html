@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+<meta name="generator" content="Orchid 0.8.2"/>
+<link rel="icon" href="https://javaeden.github.io/Clog/">
+
+<meta name="robots" content="nofollow">
+
+<title>TheStandardBookOfSpells</title>
+<meta name="description" content="Simple yet powerful logging and string formatting for Java">
+
+
+<script>
+    window.site = {"orchidVersion":"0.8.2","baseUrl":"https://javaeden.github.io/Clog","environment":"debug","version":"2.0.1"};
+</script>
+
+<!-- start:inject styles -->
+            <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+            <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css"/>
+            <link rel="stylesheet" type="text/css" href="https://javaeden.github.io/Clog/BsDoc/d1ba4a86/assets/css/bsdoc.css"/>
+            <link rel="stylesheet" type="text/css" href="https://rawgit.com/PrismJS/prism-themes/master/themes/prism-darcula.css"/>
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/plugins/line-numbers/prism-line-numbers.min.css"/>
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/plugins/line-highlight/prism-line-highlight.min.css"/>
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/plugins/toolbar/prism-toolbar.min.css"/>
+    <!-- end:inject styles --></head>
+<body>
+
+<a class="github-fork-ribbon left-top"
+   href="https://github.com/JavaEden/Clog"
+   title="Fork me on GitHub">Fork me on GitHub</a>
+
+<header class="navbar navbar-fixed-top bs-docs-nav">
+    <div class="container">
+        <div class="navbar-header" role="banner">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://javaeden.github.io/Clog">Clog</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+                                                            <li><a href="https://javaeden.github.io/Clog">Home</a></li>
+                                                                                <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Wiki<span class="caret"></span></a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                                            </ul>
+                        </li>
+                                                                                <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Integrations<span class="caret"></span></a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                                                    <li><a href="https://javaeden.github.io/Clog/clog4j">Clog4j</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/android-clog">Android Clog</a></li>
+                                                            </ul>
+                        </li>
+                                                                                <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">All Packages<span class="caret"></span></a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog">com.caseyjbrooks.clog</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue">com.caseyjbrooks.clog.parseltongue</a></li>
+                                                            </ul>
+                        </li>
+                                                                                <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">All Classes<span class="caret"></span></a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/Clog">Clog</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/Clog/Priority">Clog.Priority</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/ClogFormatter">ClogFormatter</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/ClogLogger">ClogLogger</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/ClogProfile">ClogProfile</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/DefaultLogger">DefaultLogger</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/EmptyLogger">EmptyLogger</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/IClog">IClog</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Incantation">Incantation</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/MethodIncantation">MethodIncantation</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Parseltongue">Parseltongue</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/ProfileSupplier">ProfileSupplier</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a></li>
+                                                                    <li><a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/TheStandardBookOfSpells">TheStandardBookOfSpells</a></li>
+                                                            </ul>
+                        </li>
+                                                </ul>
+        </nav>
+    </div>
+</header>
+<div id="top"></div>
+
+    <div class="bs-docs-masthead" id="jumbotron">
+        <div class="container">
+            <h1 class="home-title">TheStandardBookOfSpells</h1>
+        </div>
+    </div>
+<div class="container bs-docs-container">
+    <div class="row">
+        <div class="col-md-9" role="main">
+        
+                                <!-- start:inject components -->
+                                                                                                        <div class="orchid-javadoc">
+
+<div>
+    <code>
+                <span>
+            <b>public class <a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/TheStandardBookOfSpells">TheStandardBookOfSpells</a></b>
+        </span>
+
+                    <span>extends Object</span>
+        
+            </code>
+</div>
+
+<h3>Class TheStandardBookOfSpells</h3>
+<p><b>In package <a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue">com.caseyjbrooks.clog.parseltongue</a></b></p>
+
+<div class="class-description">
+<p>A collection of all the Spells available by default within Parseltongue formatters.</p>
+</div>
+
+<h3>Constructors</h3>
+
+<div class="panel panel-default">
+    <div class="panel-heading"><code>TheStandardBookOfSpells()</code></div>
+        <div class="panel-body">
+        <p></p>
+    </div>
+
+    
+    </div>
+<h3>Methods</h3>
+
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                String                toUpper(Object)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;uppercase&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Calls '.toString()' on an object, then formats the output as uppercase
+
+ Clog example: #{ $1 | uppercase }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Object data</code>
+            <br><br>
+        <div>the object to format</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>String</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                String                toLower(Object)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;lowercase&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Calls '.toString()' on an object, then formats the output as lowercase
+
+ Clog example: #{ $1 | lowercase }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Object data</code>
+            <br><br>
+        <div>the object to format</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>String</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                String                trim(Object)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;trim&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Calls '.toString()' on an object, then trims whitespace from its output
+
+ Clog example: #{ $1 | trim }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Object data</code>
+            <br><br>
+        <div>the object to format</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>String</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                String                split(Object, String)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;split&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Calls '.toString()' on an object, then splits it into an array of String based on a given delimiter
+
+ Clog example: #{ $1 | split('.') }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Object data</code>
+            <br><br>
+        <div>the object to format</div>
+        </li>
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">String delimiter</code>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>String</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                String                capitalize(Object)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;capitalize&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Calls '.toString()' on an object, then capitalizes the output
+
+ Clog example: #{ $1 | capitalize }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Object data</code>
+            <br><br>
+        <div>the object to format</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>String</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                String                repeat(Object[], String)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;repeat&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Repeats the input data for each element of the array, applying the corresponding Clog format String.
+
+ Clog example: #{ $1 | repeat('* #{ $1 }') }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Object data</code>
+            <br><br>
+        <div>the data to repeat</div>
+        </li>
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">String template</code>
+            <br><br>
+        <div>the Clog template to render for each element</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>String</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                String                repeat(Iterable, String)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;repeat&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Repeats the input data for each element of the Iterable, applying the corresponding Clog format String.
+
+ Clog example: #{ $1 | repeat('#{ $1 }') }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Iterable data</code>
+            <br><br>
+        <div>the data to repeat</div>
+        </li>
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">String template</code>
+            <br><br>
+        <div>the Clog template to render for each element</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>String</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                String                join(Object[], String)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;join&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Calls '.toString()' on every element in the array, then joins them with a specified separator String. Based on
+ the Android Open Source Project TestUtils.java class.
+
+ Clog example: #{ $1 | join(', ') }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Object data</code>
+            <br><br>
+        <div>an Array of any type to join</div>
+        </li>
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">String separator</code>
+            <br><br>
+        <div>a String to concatenate between every element's String representation</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>String</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                String                join(Iterable, String)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;join&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Calls '.toString()' on every element in the Iterable, then joins them with a specified separator String. Based on
+ the Android Open Source Project TestUtils.java class.
+
+ Clog example: #{ $1 | join(', ') }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Iterable data</code>
+            <br><br>
+        <div>an Iterable of any type to join</div>
+        </li>
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">String separator</code>
+            <br><br>
+        <div>a String to concatenate between every element's String representation</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>String</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                String                getClassName(Object)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;className&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Converts any Object to the simple Class name String of that Object
+
+ Clog example: #{ $1 | className }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Object data</code>
+            <br><br>
+        <div>any object to display the simple Class name</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>String</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                    void
+                length(String)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;length&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Get the number of characters in a String
+
+ Clog example: #{ $1 | length }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">String data</code>
+            <br><br>
+        <div>a String to find the length of</div>
+        </li>
+</ul>
+    
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                    void
+                length(Object[])        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;length&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Get the number of elements in an Array
+
+ Clog example: #{ $1 | length }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Object data</code>
+            <br><br>
+        <div>an Array of any type to find the length of</div>
+        </li>
+</ul>
+    
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                    void
+                length(Collection)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;length&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Get the number of elements in a Collection
+
+ Clog example: #{ $1 | length }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Collection data</code>
+            <br><br>
+        <div>a Collection of any type to find the length of</div>
+        </li>
+</ul>
+    
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                Object                date(Calendar)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;date&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Formats a Calendar object with to human-readable date of the form 'yyyy/MM/dd HH:mm:ss'
+
+ Clog example: #{ $1 | date }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Calendar data</code>
+            <br><br>
+        <div>a Calendar object to get the date of</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>Object</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                Object                date(Calendar, String)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;date&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Formats a Calendar object with to human-readable date of the form specified
+
+ Clog example: #{ $1 | date('yyyy-MM-dd') }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Calendar data</code>
+            <br><br>
+        <div>a Calendar object to get the date of</div>
+        </li>
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">String formatString</code>
+            <br><br>
+        <div>the String used to format the Calendar object</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>Object</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                Object                ansiForegroundColorStart(Object, String)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;fg&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Inserts the appropriate ANSI codes to change the foreground color of the text. The foreground color will be used
+ until an ANSI 'reset' character is added with the 'reset' Spell. Should only be used when output is intended to
+ be displayed in a Terminal. Works on both Unix/Linux terminals and Windows command prompt.
+
+ Available Colors (case insensitive):
+ BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, DEFAULT
+
+ Clog example: #{ $0 | fg('cyan') }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Object data</code>
+            <br><br>
+        <div>ignored</div>
+        </li>
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">String color</code>
+            <br><br>
+        <div>the color to change the foreground to.</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>Object</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                Object                ansiBackgroundColorStart(Object, String)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;bg&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Inserts the appropriate ANSI codes to change the background color of the text. The background color will be used
+ until an ANSI 'reset' character is added with the 'reset' Spell. Should only be used when output is intended to
+ be displayed in a Terminal. Works on both Unix/Linux terminals and Windows command prompt.
+
+ Available Colors (case insensitive):
+ BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, DEFAULT
+
+ Clog example: #{ $0 | bg('yellow') }</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Object data</code>
+            <br><br>
+        <div>ignored</div>
+        </li>
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">String color</code>
+            <br><br>
+        <div>the color to change the background to.</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>Object</code>
+            </div>
+        </div>
+    </div>
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <code>
+        public        static                Object                ansiStop(Object)        </code>
+
+                            </div>
+            <div class="panel-body">
+            <div><b>Method Annotations:</b></div>
+            <code><div>
+@<a href="https://javaeden.github.io/Clog/com/caseyjbrooks/clog/parseltongue/Spell">Spell</a>(name=&quot;reset&quot;)</div>
+</code>
+        </div>
+        <div class="panel-body">
+        <p>Inserts the appropriate ANSI codes to reset the terminal text colors. Should only be used when output is intended
+ to be displayed in a Terminal. Works on both Unix/Linux terminals and Windows command prompt.</p>
+    </div>
+
+    
+            <div class="panel-body">
+            <b>Parameters: </b>
+        </div>
+    <ul class="list-group">
+    <li class="list-group-item clearfix">
+                        <code class="pull-left">Object data</code>
+            <br><br>
+        <div>ignored</div>
+        </li>
+</ul>
+    
+            <div class="panel-footer">
+            <div><b>Returns: </b></div>
+            <div>
+                <code>Object</code>
+            </div>
+        </div>
+    </div>
+</div>                                                                <!-- end:inject components -->
+                </div>
+
+        <!-- Page navigation
+        =========================================== -->
+        <div class="col-md-3" role="complementary">
+        <div class="bs-docs-sidebar hidden-print" id="bs-docs-sidebar">
+    
+    <ul class="nav bs-docs-sidenav">
+            </ul>
+
+        <!-- start:inject components -->
+        <!-- end:inject components -->
+
+    <a class="back-to-top" href="#top">
+        <i class="glyphicon glyphicon-chevron-up"></i> Back to top
+    </a>
+</div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="container bs-docs-container">
+    <footer class="bs-docs-footer" role="contentinfo">
+    <div class="row">
+        <div class="col-xs-12">
+            <nav aria-label="navigateClasses">
+                <ul class="pager">
+                    
+                                    </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="icons">
+                <a href="https://github.com/JavaEden/Clog" class="fa fa-github"></a>
+            </div>
+    <br>
+    <p>
+    Documentation template based on the
+    <a href="https://github.com/mistic100/jekyll-bootstrap-doc">Jekyll Bootstrap Doc</a>
+    Jekyll theme by the <a href="http://getbootstrap.com">Bootstrap team</a>. Site created with
+    <a href="https://orchid.netlify.com">Orchid</a>.
+</p>
+<ul class="bs-docs-footer-links muted">
+    <li>Currently 2.0.1</li>
+</ul>
+</footer>    </div>
+</div>
+
+<!-- start:inject scripts -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js"></script>
+            <script src="https://javaeden.github.io/Clog/BsDoc/d1ba4a86/assets/js/bsdoc.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/prism.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-yaml.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-java.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-groovy.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-markdown.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/plugins/line-numbers/prism-line-numbers.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/plugins/line-highlight/prism-line-highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/plugins/toolbar/prism-toolbar.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/plugins/show-language/prism-show-language.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <!-- end:inject scripts -->    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.2.0/trianglify.min.js"></script>
+<script>
+    $(function () {
+        window.colors = ['#2a623d', '#000000'];
+                      trianglify({"x_colors":["#000","#2a623d","#000"]});
+        buildNav();
+    });
+</script>
+</body>
+</html>

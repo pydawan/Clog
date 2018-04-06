@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemap: https://javaeden.github.io/Clog/clog4j/sitemap.xml
